@@ -234,6 +234,7 @@ function QL_API() {
     }
 
     async asyncCoookie(cookieValue) {
+      await this.login();
       if (this.headers.Authorization) {
         const qlCk = (await this.getEnvs('JD_COOKIE')).data;
         const DecodeName = this.getUsername(cookieValue);
